@@ -144,7 +144,7 @@ ul.menu a.ativo{
     ul.menu {
         position: absolute;
         top: 100%;
-        right: 2%;
+        right: -100%;
         width: 270px;
         height: 490px;
         background: var(--verde-claro);
@@ -166,6 +166,10 @@ ul.menu a.ativo{
     }
     ul.menu a:hover{
         color: var(--preto);
+    }
+
+    ul.menu.open{
+        right: 2%;
     }
 }
 
