@@ -1,4 +1,4 @@
-*{
+*{ 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,17 +15,19 @@
     --verde: #009929;
     --verde-claro: #5ccb5f;
     --branco: #ffffff;
+    --verde-claro-claro: #adffaf;
 
 }
 
 body{
     min-height: 100vh;
     background: var(--preto);
+    height: 100%;
 
 }
 
 .navbar {
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     right: 0;
@@ -33,14 +35,36 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: transparent;
-    padding: 20px 12%;
+    background: var(--preto);
+    padding: 20px 8%;
     transition: all 500ms ease;
     color: var(--verde-claro);
+    box-shadow: 5px 5px 50px var(--preto);
+}
+
+footer {
+    width: 100%;
+    padding: 40px 30px ;
+    font-family: DM Sans, sans-serif;
+}
+
+.footer-cor {
+    background-color: var(--verde);
+}
+
+.section-footer {
+    margin: -20px 0px;
 }
 
 ul.menu {
     display: flex;
+}
+
+ul.social {
+    display: flex;
+    width: 100%;
+    font-family: DM Sans, sans-serif;
+    gap: 15px;
 }
 
 ul.menu li {
@@ -53,6 +77,7 @@ ul.menu a{
     padding: 5px 0;
     margin: 0 30px;
     transition: all 500ms ease;
+    text-decoration: none;
 }
 
 ul.menu a:hover{
@@ -73,6 +98,19 @@ ul.menu a.ativo{
 
 .logo{
     width: 9.7rem;
+    transition: all 500ms ease;
+}
+
+@media (max-width: 2133px){
+    .navbar {
+        justify-content: center;
+    }
+    
+    .logo{
+        width: 14.7rem;
+        padding-bottom: 30px;
+    }
+
 }
 
 @media (max-width: 1280px){
@@ -85,11 +123,22 @@ ul.menu a.ativo{
         padding: 5px 0;
         margin: 0 20px;
     }
+    .navbar {
+        justify-content: space-between;
+    }
+    
 }
 
 @media (max-width: 1080px){
     #menu-icon{
         display: block;
+    }
+    .navbar {
+        justify-content: space-between;
+    }
+    .logo{
+        width: 9.7rem;
+        padding: 0;
     }
 
     ul.menu {
@@ -97,7 +146,7 @@ ul.menu a.ativo{
         top: 100%;
         right: 2%;
         width: 270px;
-        height: 29vh;
+        height: 490px;
         background: var(--verde-claro);
         display: flex;
         flex-direction: column;
@@ -112,5 +161,269 @@ ul.menu a.ativo{
         padding: 0px 25px;
         transition: all 500ms ease;
     }
+    ul.menu a.ativo{
+        color: var(--branco);
+    }
+    ul.menu a:hover{
+        color: var(--preto);
+    }
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background: var(--preto); 
+}
+
+.main-planos{
+    height: 140vh;
+}
+
+.carousel {
+    width: 900px; 
+    max-width: 100%;
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    margin-top: 20vh;
+}
+
+.planos {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 976px;
+    margin: -40% auto;
+}
+
+.planos_background {
+    content: "";
+    position: absolute;
+    left: -100%;
+    right: -100%;
+    bottom: 46%; 
+    background-color: var(--verde-claro);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    padding:50px 30px 20px 30px;
+}
+
+.planos_header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 8px;
+    gap: 8px;
+    visibility: inherit;
+}
+
+.subtitulo {
+    font-weight: 900;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    line-height: 40px;
+    visibility: inherit;
+}
+
+.container {
+    margin-top: -12rem;
+}
+
+.btn-plano {
+    background-color: var(--verde-claro);
+    border-color: var(--preto);
+}
+
+.texto-sucesso {
+    color: var(--verde-claro);
+}
+
+.btn-plano:hover{
+    background-color: var(--verde-claro);
+}
+
+.treinadores-bg {
+    background-color: var(--verde-claro);
+    border: none;
+}
+
+.aulas-titulo {
+    background-color: var(--verde);
+    color: var(--branco);
+    margin: 5%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card-header {
+background-color: var(--verde);;
+color: #fff;
+font-weight: bold;
+}
+
+.btn-aula {
+background-color: var(--verde);
+color: #fff;
+border: none;
+}
+
+.btn-aula:hover {
+background-color: var(--verde);
+box-sizing: 3px 3px var(--preto);
+}
+
+.nutricao {
+    background-color: var(--branco);
+    border: none;
+    border-radius: 10px;
+    color: var(--preto);
+    margin: 10px;
+}
+
+.nutri-header {
+    background-color: var(--verde);
+    color: var(--branco);
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-custom {
+    background-color: var(--verde);
+    color: var(--branco);
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: var(--verde)
+}
+
+.nutri-main {
+    height: 140vh;
+}
+
+.nutri-body {
+    margin-top: -8  0% auto;
+}
+
+.nutri-titulo {
+    background-color: var(--verde);
+    color: var(--branco);
+    margin: 5%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.nutricao img{
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border: none; 
+    display: block; 
+}
+
+.test-titulo {
+    background-color: var(--verde);
+    color: var(--branco);
+    padding: 2%;
+    
+    border-radius: 10px;
+}
+
+.test-sessao {
+    background-color: var(--preto);
+    
+}
+
+.test-card {
+    background-color: var(--branco);
+    border: 2px solid var(--verde);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: var(--preto);
+}
+
+.test-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--verde);
+    margin-bottom: 15px;
+}
+
+.test-card h5 {
+    color: var(--verde);
+}
+
+.sobre {
+    background-color: var(--verde);
+}
+
+.text-carrossel {
+    opacity: 0.9;
+    background-color: var(--branco);
+    color: var(--preto);
+    border-radius: 50%;
+}
+
+.sessao-contato {
+    margin-top: 10%;
+    padding: 50px 0;
+  }
+
+.contato-titulo {
+    background-color: var(--verde);
+    color: var(--branco);
+    margin: 5%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.contato-card {
+    background-color: var(--preto);
+    border: 2px solid var(--verde);
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--branco);
+}
+  
+.contato-card h5 {
+    color: var(--verde);
+}
+  
+.contato-form input, 
+.contato-form textarea {
+    background-color: var(--preto);
+    border: 1px solid var(--verde);
+    color: var(--branco);
+}
+  
+.contato-form input::placeholder, 
+.contato-form textarea::placeholder {
+    color: var(--branco);
+}
+  
+.btn-custom {
+    background-color: var(--verde);
+    border: none;
+    color: var(--branco);
+}
+  
+.btn-custom:hover {
+    background-color: var(--verde)
+}
